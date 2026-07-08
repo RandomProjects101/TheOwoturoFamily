@@ -26,9 +26,11 @@ function VoiceCard({ voice, delay }: { voice: FamilyVoice; delay: number }) {
           />
           <div>
             <h3 className="font-display text-xl italic text-ink">{voice.name}</h3>
-            <p className="mt-0.5 font-sans text-xs uppercase tracking-[0.2em] text-gold-deep">
-              {voice.relation}
-            </p>
+            {voice.relation && (
+              <p className="mt-0.5 font-sans text-xs uppercase tracking-[0.2em] text-gold-deep">
+                {voice.relation}
+              </p>
+            )}
           </div>
         </div>
 

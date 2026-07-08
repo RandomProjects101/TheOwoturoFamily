@@ -30,7 +30,8 @@ export interface GalleryImage {
 export interface FamilyVoice {
   id: string;
   name: string;
-  relation: string;
+  /** Optional — e.g. "Her Husband". Leave unset to show just the name. */
+  relation?: string;
   photo: string;
   message: string;
   /** Path to an audio file in /public/audio. Leave empty until a recording is added. */
@@ -93,8 +94,7 @@ export const familyPortrait: GalleryImage = {
 export const familyVoices: FamilyVoice[] = [
   {
     id: "v1",
-    name: "[Family Member Name]",
-    relation: "Her Husband",
+    name: "Mr Owoturo",
     photo: "/images/family/voice-01.jpg",
     message:
       "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",
@@ -102,8 +102,7 @@ export const familyVoices: FamilyVoice[] = [
   },
   {
     id: "v2",
-    name: "[Family Member Name]",
-    relation: "Her Son",
+    name: "Tobi",
     photo: "/images/family/voice-02.jpg",
     message:
       "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",
@@ -111,8 +110,7 @@ export const familyVoices: FamilyVoice[] = [
   },
   {
     id: "v3",
-    name: "[Family Member Name]",
-    relation: "Her Daughter",
+    name: "Timi",
     photo: "/images/family/voice-03.jpg",
     message:
       "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",
@@ -120,8 +118,7 @@ export const familyVoices: FamilyVoice[] = [
   },
   {
     id: "v4",
-    name: "[Family Member Name]",
-    relation: "Her Daughter",
+    name: "Bolu",
     photo: "/images/family/voice-04.jpg",
     message:
       "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",
@@ -129,8 +126,7 @@ export const familyVoices: FamilyVoice[] = [
   },
   {
     id: "v5",
-    name: "[Family Member Name]",
-    relation: "Her Daughter",
+    name: "Kadisha",
     photo: "/images/family/voice-05.jpg",
     message:
       "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",

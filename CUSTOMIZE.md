@@ -49,7 +49,8 @@ Recommended formats: `.jpg` or `.webp`, ideally 1600px+ on the longest side.
 
 Each entry in the `familyVoices` array needs:
 
-- `name`, `relation` — who is speaking.
+- `name` — who is speaking. `relation` is optional (e.g. "Her Husband") —
+  leave it out to show just the name, as it is by default now.
 - `photo` — their portrait, in `public/images/family/`.
 - `message` — a short written line (shown on the card itself).
 - `audioSrc` — path to their recording, in `public/audio/`.

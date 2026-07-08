@@ -39,6 +39,17 @@ public/audio/         Voice recordings and background piano
 
 ## Deploying
 
-Because this is a private family site, consider deploying to Vercel with a
-password-protected preview, or hosting it somewhere not indexed by search
-engines. `robots` is already set to disallow indexing in `app/layout.tsx`.
+The project needs no special configuration — it's a standard Next.js App
+Router app and Vercel builds it automatically.
+
+1. Push this repo to GitHub (already done).
+2. On [vercel.com/new](https://vercel.com/new), import the repo. Vercel
+   detects Next.js automatically — no build settings to change.
+3. Deploy. No environment variables are required.
+
+**On privacy:** `robots` is already set to disallow search indexing
+(`app/layout.tsx`), so the site won't show up in Google. It is still reachable
+by anyone with the link, though — a Vercel deployment URL is public by
+default. If you want it locked down further, Vercel's **Password
+Protection** (Project Settings → Deployment Protection, requires a Pro plan)
+is the simplest option.

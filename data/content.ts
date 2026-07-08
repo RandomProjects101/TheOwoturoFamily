@@ -103,7 +103,7 @@ export const familyVoices: FamilyVoice[] = [
   {
     id: "v2",
     name: "[Family Member Name]",
-    relation: "Her Daughter",
+    relation: "Her Son",
     photo: "/images/family/voice-02.jpg",
     message:
       "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",
@@ -112,7 +112,7 @@ export const familyVoices: FamilyVoice[] = [
   {
     id: "v3",
     name: "[Family Member Name]",
-    relation: "Her Son",
+    relation: "Her Daughter",
     photo: "/images/family/voice-03.jpg",
     message:
       "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",
@@ -121,11 +121,20 @@ export const familyVoices: FamilyVoice[] = [
   {
     id: "v4",
     name: "[Family Member Name]",
-    relation: "Her Grandchild",
+    relation: "Her Daughter",
     photo: "/images/family/voice-04.jpg",
     message:
       "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",
     audioSrc: "/audio/voice-04.mp3",
+  },
+  {
+    id: "v5",
+    name: "[Family Member Name]",
+    relation: "Her Daughter",
+    photo: "/images/family/voice-05.jpg",
+    message:
+      "[Write a short message to Mum here — a sentence or two from the heart is plenty.]",
+    audioSrc: "/audio/voice-05.mp3",
   },
 ];
 

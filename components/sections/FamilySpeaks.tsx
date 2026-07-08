@@ -84,7 +84,7 @@ export function FamilySpeaks() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 [&>*:last-child:nth-child(odd)]:sm:col-span-2 [&>*:last-child:nth-child(odd)]:sm:mx-auto [&>*:last-child:nth-child(odd)]:sm:w-full [&>*:last-child:nth-child(odd)]:sm:max-w-md">
           {familyVoices.map((voice, i) => (
             <VoiceCard key={voice.id} voice={voice} delay={(i % 2) * 0.15} />
           ))}

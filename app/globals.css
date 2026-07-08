@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #f6efe4;
+  --color-cream-soft: #faf6ef;
+  --color-paper: #fffdf8;
+  --color-beige: #ead9bf;
+  --color-beige-deep: #ded1b6;
+  --color-gold: #b9945c;
+  --color-gold-soft: #d4b483;
+  --color-gold-deep: #8f6f3f;
+  --color-ink: #2c2620;
+  --color-ink-soft: #55493c;
+  --color-ink-faint: #8a7c6a;
+
+  --shadow-soft: 0 20px 60px -20px rgba(44, 38, 32, 0.25);
+  --shadow-card: 0 10px 30px -12px rgba(44, 38, 32, 0.18);
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-paper: var(--color-paper);
+  --color-beige: var(--color-beige);
+  --color-beige-deep: var(--color-beige-deep);
+  --color-gold: var(--color-gold);
+  --color-gold-soft: var(--color-gold-soft);
+  --color-gold-deep: var(--color-gold-deep);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-faint: var(--color-ink-faint);
+
+  --font-display: var(--font-display);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-hand: var(--font-hand);
+}
+
+* {
+  scrollbar-color: var(--color-gold-soft) transparent;
+  scrollbar-width: thin;
+}
+
+html {
+  color-scheme: light only;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-gold-soft);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-soft);
+  border-radius: 999px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+
+/* Fine paper grain overlay, extremely subtle — never a flashy gradient */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scaleY(1) scaleX(1) rotate(-1deg);
+    opacity: 1;
+  }
+  20% {
+    transform: scaleY(1.06) scaleX(0.97) rotate(1deg);
+    opacity: 0.92;
+  }
+  40% {
+    transform: scaleY(0.96) scaleX(1.03) rotate(-2deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scaleY(1.03) scaleX(0.98) rotate(1.5deg);
+    opacity: 0.95;
+  }
+  80% {
+    transform: scaleY(0.98) scaleX(1.02) rotate(-1deg);
+    opacity: 1;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 3.2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes drift-slow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-1.5%, -2%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-drift {
+  animation: drift-slow 18s ease-in-out infinite;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 90s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 110s linear infinite;
+}
+
+@keyframes dust-float {
+  0% {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--dust-opacity, 0.5);
+  }
+  90% {
+    opacity: var(--dust-opacity, 0.5);
+  }
+  100% {
+    transform: translate3d(var(--dust-x, 20px), -140px, 0);
+    opacity: 0;
+  }
+}
+
+.animate-dust {
+  animation-name: dust-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none !important;
+    transform: none !important;
+  }
+}

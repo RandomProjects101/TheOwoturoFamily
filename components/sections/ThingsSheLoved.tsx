@@ -1,11 +1,14 @@
 import {
   BookOpen,
+  Camera,
   Church,
   Coffee,
   Flower2,
   Footprints,
+  Gem,
   Music2,
   Soup,
+  Sparkles,
   Sun,
   Trees,
   Users,
@@ -25,6 +28,9 @@ const ICONS: Record<IconKey, LucideIcon> = {
   sun: Sun,
   tea: Coffee,
   dance: Footprints,
+  jewelry: Gem,
+  heels: Sparkles,
+  photos: Camera,
 };
 
 export function ThingsSheLoved() {

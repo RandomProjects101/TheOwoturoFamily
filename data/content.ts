@@ -18,7 +18,10 @@ export type IconKey =
   | "book"
   | "sun"
   | "tea"
-  | "dance";
+  | "dance"
+  | "jewelry"
+  | "heels"
+  | "photos";
 
 export interface GalleryImage {
   id: string;
@@ -67,7 +70,7 @@ export const family = {
   motherName: "Mama Owoturo",
   motherFirstName: "Mum",
   yearsLived: "[Birth Year] – [Passing Year]",
-  remembranceDate: "[Day, Month]",
+  remembranceDate: "22nd July",
   heroPhoto: "/images/hero/family-portrait.jpg",
   heroKicker: "In Loving Memory",
   heroTitle: "In Loving Memory",
@@ -204,15 +207,15 @@ export const timelineEvents: TimelineEvent[] = [
 export const thingsSheLoved: LovedThing[] = [
   {
     id: "l1",
-    icon: "flower",
-    title: "[Her Favourite Flower]",
-    description: "[A line about why, or where she liked to keep them.]",
+    icon: "jewelry",
+    title: "Jewelry Making",
+    description: "She was so creative — she loved making her own jewelry.",
   },
   {
     id: "l2",
-    icon: "music",
-    title: "Lighthouse Family",
-    description: "The band she loved to put on and just listen to.",
+    icon: "heels",
+    title: "Her High Heels",
+    description: "She loved a good pair of high heels.",
   },
   {
     id: "l3",
@@ -223,9 +226,9 @@ export const thingsSheLoved: LovedThing[] = [
   },
   {
     id: "l4",
-    icon: "faith",
-    title: "[Her Church]",
-    description: "[What her faith or place of worship meant to her.]",
+    icon: "photos",
+    title: "Taking Pictures",
+    description: "She loved taking pictures — always capturing the moment.",
   },
 ];
 

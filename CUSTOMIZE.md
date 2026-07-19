@@ -77,7 +77,8 @@ to choose the moment to press play anyway.
 - `timelineEvents` — birth, marriage, children, family memories, legacy — add
   or remove entries freely, the layout adapts automatically.
 - `thingsSheLoved` — pick from the available `icon` values in `IconKey`
-  (flower, music, food, family, faith, garden, book, sun, tea, dance).
+  (flower, music, food, family, faith, garden, book, sun, tea, dance,
+  jewelry, heels, photos).
 - `finalSection` — the closing words. The default text matches what's meant
   to be there; only change `familySignature` if you'd like something other
   than "The Owoturo Family".

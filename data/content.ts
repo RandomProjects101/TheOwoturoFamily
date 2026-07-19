@@ -137,51 +137,24 @@ export const familyVoices: FamilyVoice[] = [
 export const memories: Memory[] = [
   {
     id: "m1",
-    title: "[Give this memory a title]",
-    date: "[Year or occasion]",
-    excerpt: "[A line or two that hints at the story — this is what shows on the note before it's opened.]",
+    title: "What She Always Said",
+    excerpt: "Two things she never stopped telling us.",
     story:
-      "[Write the full memory here. What happened, how it felt, why it stays with you. This is the space to tell it properly.]",
+      "“Give people the benefit of the doubt.” And, only half joking: “Marry someone who loves you as much as they love their skin.” We heard both more times than we could count — and neither one ever got old.",
   },
   {
     id: "m2",
-    title: "[Give this memory a title]",
-    date: "[Year or occasion]",
-    excerpt: "[A line or two that hints at the story — this is what shows on the note before it's opened.]",
+    title: "Her Kind of Love",
+    excerpt: "Affectionate in the smallest ways.",
     story:
-      "[Write the full memory here. What happened, how it felt, why it stays with you. This is the space to tell it properly.]",
+      "She was the type to hold your hand for no reason, or hug and kiss you out of nowhere. And her heart — she was so kind and considerate to people. Anyone could come to her with their problems, and she had a good listening ear.",
   },
   {
     id: "m3",
-    title: "[Give this memory a title]",
-    date: "[Year or occasion]",
-    excerpt: "[A line or two that hints at the story — this is what shows on the note before it's opened.]",
+    title: "Ochicha",
+    excerpt: "The nickname only the family understood.",
     story:
-      "[Write the full memory here. What happened, how it felt, why it stays with you. This is the space to tell it properly.]",
-  },
-  {
-    id: "m4",
-    title: "[Give this memory a title]",
-    date: "[Year or occasion]",
-    excerpt: "[A line or two that hints at the story — this is what shows on the note before it's opened.]",
-    story:
-      "[Write the full memory here. What happened, how it felt, why it stays with you. This is the space to tell it properly.]",
-  },
-  {
-    id: "m5",
-    title: "[Give this memory a title]",
-    date: "[Year or occasion]",
-    excerpt: "[A line or two that hints at the story — this is what shows on the note before it's opened.]",
-    story:
-      "[Write the full memory here. What happened, how it felt, why it stays with you. This is the space to tell it properly.]",
-  },
-  {
-    id: "m6",
-    title: "[Give this memory a title]",
-    date: "[Year or occasion]",
-    excerpt: "[A line or two that hints at the story — this is what shows on the note before it's opened.]",
-    story:
-      "[Write the full memory here. What happened, how it felt, why it stays with you. This is the space to tell it properly.]",
+      "Say it in this house and someone will smile. Some things don't need an explanation — they just need to be remembered.",
   },
 ];
 
@@ -238,32 +211,21 @@ export const thingsSheLoved: LovedThing[] = [
   {
     id: "l2",
     icon: "music",
-    title: "[Her Favourite Music]",
-    description: "[The songs or artists that remind the family of her.]",
+    title: "Lighthouse Family",
+    description: "The band she loved to put on and just listen to.",
   },
   {
     id: "l3",
     icon: "food",
-    title: "[Her Favourite Dish]",
-    description: "[What she loved to cook, or loved to be cooked for her.]",
+    title: "Oha Soup",
+    description:
+      "Her signature dish — everyone loved her cooking, and she loved feeding everyone who came around.",
   },
   {
     id: "l4",
-    icon: "family",
-    title: "Sunday Gatherings",
-    description: "[A family tradition she cherished or kept alive.]",
-  },
-  {
-    id: "l5",
     icon: "faith",
-    title: "[Her Faith / Church]",
+    title: "[Her Church]",
     description: "[What her faith or place of worship meant to her.]",
-  },
-  {
-    id: "l6",
-    icon: "garden",
-    title: "[Her Garden / A Place]",
-    description: "[A place that felt like her, and why.]",
   },
 ];
 

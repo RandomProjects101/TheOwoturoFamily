@@ -43,11 +43,11 @@ export function ThingsSheLoved() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {thingsSheLoved.map((thing, i) => {
             const Icon = ICONS[thing.icon];
             return (
-              <Reveal key={thing.id} delay={(i % 3) * 0.1} y={20}>
+              <Reveal key={thing.id} delay={(i % 4) * 0.1} y={20}>
                 <div className="group flex h-full flex-col items-center rounded-md border border-beige-deep/50 bg-paper px-6 py-10 text-center shadow-card transition-transform duration-500 hover:-translate-y-1.5">
                   <span className="flex h-14 w-14 items-center justify-center rounded-full bg-beige text-gold-deep transition-colors duration-500 group-hover:bg-gold/15">
                     <Icon className="h-6 w-6" strokeWidth={1.25} />

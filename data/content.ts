@@ -182,8 +182,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: "t3",
     year: "[Year]",
     title: "Children",
-    description:
-      "[The arrival of her children, and what kind of mother she became.]",
+    description: "The children she loved with her whole heart.",
     photo: "/images/timeline/children.jpg",
   },
   {
@@ -193,14 +192,6 @@ export const timelineEvents: TimelineEvent[] = [
     description:
       "[A milestone, a trip, a tradition — a moment the whole family remembers together.]",
     photo: "/images/timeline/memory.jpg",
-  },
-  {
-    id: "t5",
-    year: "[Year]",
-    title: "Her Legacy",
-    description:
-      "[What she leaves behind — in the family, in each of us, in the way we carry her forward.]",
-    photo: "/images/timeline/legacy.jpg",
   },
 ];
 

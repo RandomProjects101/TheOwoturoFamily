@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# full-resolution source photos, not served — see public/images for the web versions
+/originals/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -238,6 +238,19 @@ export const photoWallImages: string[] = [
   "/images/wall/wall-06.jpg",
   "/images/wall/wall-07.jpg",
   "/images/wall/wall-08.jpg",
+  "/images/wall/wall-09.jpg",
+  "/images/wall/wall-10.jpg",
+  "/images/wall/wall-11.jpg",
+  "/images/wall/wall-12.jpg",
+  "/images/wall/wall-13.jpg",
+  "/images/wall/wall-14.jpg",
+  "/images/wall/wall-15.jpg",
+  "/images/wall/wall-16.jpg",
+  "/images/wall/wall-17.jpg",
+  "/images/wall/wall-18.jpg",
+  "/images/wall/wall-19.jpg",
+  "/images/wall/wall-20.jpg",
+  "/images/wall/wall-21.jpg",
 ];
 
 export const finalSection = {

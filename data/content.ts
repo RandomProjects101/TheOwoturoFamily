@@ -213,9 +213,9 @@ export const thingsSheLoved: LovedThing[] = [
   },
   {
     id: "l2",
-    icon: "heels",
-    title: "Her High Heels",
-    description: "She loved a good pair of high heels.",
+    icon: "music",
+    title: "Lighthouse Family",
+    description: "The band she loved to put on and just listen to.",
   },
   {
     id: "l3",

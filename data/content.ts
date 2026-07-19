@@ -159,6 +159,12 @@ export const memories: Memory[] = [
     story:
       "Say it in this house and someone will smile. Some things don't need an explanation — they just need to be remembered.",
   },
+  {
+    id: "m4",
+    title: "Her Heels",
+    excerpt: "She loved a good pair of heels.",
+    story: "She loved her heels — always put together, always herself.",
+  },
 ];
 
 export const timelineEvents: TimelineEvent[] = [

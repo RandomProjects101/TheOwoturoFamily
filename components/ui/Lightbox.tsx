@@ -14,9 +14,18 @@ interface LightboxProps {
   /** "contain" for composed graphics (collages, banners with text) where
    * cropping would cut off content. */
   fit?: "cover" | "contain";
+  /** Tailwind aspect-ratio class for the framed photo. Defaults to 3:2. */
+  aspectClassName?: string;
 }
 
-export function Lightbox({ images, index, onClose, onNavigate, fit = "cover" }: LightboxProps) {
+export function Lightbox({
+  images,
+  index,
+  onClose,
+  onNavigate,
+  fit = "cover",
+  aspectClassName = "aspect-[3/2]",
+}: LightboxProps) {
   const isOpen = index !== null;
   const active = isOpen ? images[index] : null;
 
@@ -99,7 +108,7 @@ export function Lightbox({ images, index, onClose, onNavigate, fit = "cover" }: 
             <Frame
               src={active.src}
               alt={active.alt}
-              className="aspect-[3/2] w-full max-h-[70vh] rounded-sm bg-cream-soft shadow-soft"
+              className={`${aspectClassName} w-full max-h-[70vh] rounded-sm bg-cream-soft shadow-soft`}
               fit={fit}
             />
             {active.caption && (

@@ -33,7 +33,7 @@ export function FamilyGallery() {
             className="group relative mx-auto block w-full overflow-hidden rounded-sm shadow-soft"
           >
             <motion.div
-              className="aspect-[851/315] bg-cream-soft"
+              className="aspect-[21/9]"
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
@@ -42,7 +42,6 @@ export function FamilyGallery() {
                 alt={familyPortrait.alt}
                 monogram={familyPortrait.alt}
                 className="h-full w-full"
-                fit="contain"
                 sizes="(min-width: 1024px) 896px, 100vw"
               />
             </motion.div>
@@ -62,7 +61,7 @@ export function FamilyGallery() {
         index={isOpen ? 0 : null}
         onClose={() => setIsOpen(false)}
         onNavigate={() => {}}
-        fit="contain"
+        aspectClassName="aspect-[21/9]"
       />
     </section>
   );

@@ -1,30 +1,46 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Music, VolumeX } from "lucide-react";
 import { backgroundAudio } from "@/data/content";
 import { cn } from "@/lib/utils";
 
-/** Optional, muted-until-pressed background piano — browsers block
- * autoplay with sound, so this is the deliberate, user-initiated switch. */
+/** Starts playing as soon as the browser allows it. Most browsers block
+ * sound until the visitor has interacted with the page at all, so this
+ * tries immediately on mount and again on the very first tap/click/
+ * scroll/keypress anywhere on the page — whichever the browser accepts.
+ * The button lets them stop it once it's going. */
 export function BackgroundAudio() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [unavailable, setUnavailable] = useState(false);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+
+    const events = ["pointerdown", "keydown", "touchstart", "scroll"];
+    const onFirstInteraction = () => {
+      events.forEach((e) => document.removeEventListener(e, onFirstInteraction));
+      audio.play().catch(() => {});
+    };
+    events.forEach((e) => document.addEventListener(e, onFirstInteraction, { passive: true }));
+
+    return () => {
+      events.forEach((e) => document.removeEventListener(e, onFirstInteraction));
+    };
+  }, []);
 
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio || unavailable) return;
     if (isPlaying) {
       audio.pause();
-      setIsPlaying(false);
     } else {
-      audio.volume = 0.35;
-      audio
-        .play()
-        .then(() => setIsPlaying(true))
-        .catch(() => setUnavailable(true));
+      audio.play().catch(() => setUnavailable(true));
     }
   };
 
@@ -39,7 +55,9 @@ export function BackgroundAudio() {
         ref={audioRef}
         src={backgroundAudio.src}
         loop
-        preload="none"
+        preload="auto"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
         onError={() => setUnavailable(true)}
         className="hidden"
       />

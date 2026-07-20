@@ -194,10 +194,9 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: "t4",
     year: "[Year]",
-    title: "A Family Memory",
-    description:
-      "[A milestone, a trip, a tradition — a moment the whole family remembers together.]",
-    photo: "/images/timeline/memory.jpg",
+    title: "Her Legacy",
+    description: "Her greatest legacy — the children she raised.",
+    photo: "/images/timeline/legacy.jpg",
   },
 ];
 

@@ -5,7 +5,7 @@ export function IntroSection() {
   return (
     <section
       id="intro"
-      className="relative flex min-h-screen w-full items-center justify-center bg-cream-soft px-6 py-28"
+      className="relative flex min-h-[100svh] w-full items-center justify-center bg-cream-soft px-6 py-28"
     >
       <div className="mx-auto max-w-3xl text-center">
         <Reveal>

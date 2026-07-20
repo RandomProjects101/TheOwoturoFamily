@@ -55,6 +55,8 @@ export interface TimelineEvent {
   title: string;
   description: string;
   photo?: string;
+  /** Tailwind object-position class for the photo. Defaults to "object-top". */
+  photoPosition?: string;
 }
 
 export interface LovedThing {
@@ -197,6 +199,7 @@ export const timelineEvents: TimelineEvent[] = [
     title: "Her Legacy",
     description: "Her greatest legacy — the children she raised.",
     photo: "/images/timeline/legacy.jpg",
+    photoPosition: "object-[center_25%]",
   },
 ];
 

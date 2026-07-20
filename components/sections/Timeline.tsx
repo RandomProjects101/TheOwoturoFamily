@@ -94,7 +94,7 @@ export function Timeline() {
                             alt={event.title}
                             monogram={event.title}
                             className="aspect-[4/3] w-full rounded-sm"
-                            imgClassName="object-top"
+                            imgClassName={event.photoPosition ?? "object-top"}
                             sizes="256px"
                           />
                           <p className="mt-4 font-serif text-sm leading-relaxed text-ink-soft">

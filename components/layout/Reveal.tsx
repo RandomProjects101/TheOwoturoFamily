@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { useIsCoarsePointer } from "@/lib/useIsCoarsePointer";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -31,15 +32,7 @@ export function Reveal({
   duration = 1.1,
 }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
-
-  // Animating `filter: blur()` is expensive on touch devices (a well-known
-  // mobile Safari/Chrome jank source) — skip it there and keep the cheap,
-  // compositor-friendly opacity/transform animation instead. Read once via
-  // a lazy initializer rather than an effect, since it can't change mid-session.
-  const [isCoarsePointer] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches
-  );
-
+  const isCoarsePointer = useIsCoarsePointer();
   const shouldBlur = blur && !isCoarsePointer;
 
   const variants: Variants = shouldReduceMotion

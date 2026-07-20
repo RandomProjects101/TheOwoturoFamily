@@ -70,11 +70,11 @@ export function Timeline() {
                       />
                     </span>
                     <span>
-                      <span className="block font-sans text-xs uppercase tracking-[0.2em] text-gold-deep">
-                        {event.year}
-                      </span>
-                      <span className="mt-1 block font-display text-lg italic text-ink">
+                      <span className="block font-display text-lg italic text-ink">
                         {event.title}
+                      </span>
+                      <span className="mt-1 block font-serif text-sm italic text-ink-faint">
+                        {event.caption}
                       </span>
                     </span>
                   </button>

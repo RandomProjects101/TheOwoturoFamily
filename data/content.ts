@@ -51,8 +51,9 @@ export interface Memory {
 
 export interface TimelineEvent {
   id: string;
-  year: string;
   title: string;
+  /** Short line always shown under the title. */
+  caption: string;
   description: string;
   photo?: string;
   /** Tailwind object-position class for the photo. Defaults to "object-top". */
@@ -172,31 +173,31 @@ export const memories: Memory[] = [
 export const timelineEvents: TimelineEvent[] = [
   {
     id: "t1",
-    year: "[Year]",
     title: "Born",
+    caption: "Where her story began.",
     description:
       "[Where and when she was born, and anything about her early years worth remembering.]",
     photo: "/images/timeline/birth.jpg",
   },
   {
     id: "t2",
-    year: "[Year]",
     title: "Marriage",
+    caption: "The beginning of a beautiful family.",
     description:
       "[The story of how the family began — where she was married, and to whom.]",
     photo: "/images/timeline/marriage.jpg",
   },
   {
     id: "t3",
-    year: "[Year]",
     title: "Children",
+    caption: "The children she loved endlessly.",
     description: "The children she loved with her whole heart.",
     photo: "/images/timeline/children.jpg",
   },
   {
     id: "t4",
-    year: "[Year]",
     title: "Her Legacy",
+    caption: "The legacy she leaves behind.",
     description: "Her greatest legacy — the children she raised.",
     photo: "/images/timeline/legacy.jpg",
     photoPosition: "object-[center_25%]",

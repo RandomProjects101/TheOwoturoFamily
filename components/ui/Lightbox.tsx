@@ -11,9 +11,12 @@ interface LightboxProps {
   index: number | null;
   onClose: () => void;
   onNavigate: (index: number) => void;
+  /** "contain" for composed graphics (collages, banners with text) where
+   * cropping would cut off content. */
+  fit?: "cover" | "contain";
 }
 
-export function Lightbox({ images, index, onClose, onNavigate }: LightboxProps) {
+export function Lightbox({ images, index, onClose, onNavigate, fit = "cover" }: LightboxProps) {
   const isOpen = index !== null;
   const active = isOpen ? images[index] : null;
 
@@ -96,7 +99,8 @@ export function Lightbox({ images, index, onClose, onNavigate }: LightboxProps) 
             <Frame
               src={active.src}
               alt={active.alt}
-              className="aspect-[3/2] w-full max-h-[70vh] rounded-sm shadow-soft"
+              className="aspect-[3/2] w-full max-h-[70vh] rounded-sm bg-cream-soft shadow-soft"
+              fit={fit}
             />
             {active.caption && (
               <p className="mt-5 text-center font-serif text-base italic text-cream/85">

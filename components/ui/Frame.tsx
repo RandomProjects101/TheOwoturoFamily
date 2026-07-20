@@ -16,6 +16,9 @@ interface FrameProps {
   /** Set false for full-bleed backdrops where text is overlaid on top —
    * a large centered letter would collide with it. */
   showMonogram?: boolean;
+  /** "contain" letterboxes instead of cropping — use for composed graphics
+   * (collages, banners with text) where cropping would cut off content. */
+  fit?: "cover" | "contain";
 }
 
 /**
@@ -31,6 +34,7 @@ export function Frame({
   sizes = "100vw",
   priority = false,
   showMonogram = true,
+  fit = "cover",
 }: FrameProps) {
   const [errored, setErrored] = useState(false);
   const showPlaceholder = !src || errored;
@@ -45,7 +49,7 @@ export function Frame({
           sizes={sizes}
           priority={priority}
           onError={() => setErrored(true)}
-          className={cn("object-cover", imgClassName)}
+          className={cn(fit === "cover" ? "object-cover" : "object-contain", imgClassName)}
         />
       )}
       {showPlaceholder && (

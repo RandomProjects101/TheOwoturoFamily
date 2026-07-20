@@ -94,7 +94,6 @@ export const familyPortrait: GalleryImage = {
   id: "family-portrait",
   src: "/images/gallery/family-portrait.jpg",
   alt: "The Owoturo family",
-  caption: "[Add a caption]",
 };
 
 export const familyVoices: FamilyVoice[] = [

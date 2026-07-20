@@ -69,8 +69,13 @@ export function Timeline() {
                         )}
                       />
                     </span>
-                    <span className="block font-display text-lg italic text-ink">
-                      {event.title}
+                    <span>
+                      <span className="block font-display text-lg italic text-ink">
+                        {event.title}
+                      </span>
+                      <span className="mt-1 block font-serif text-sm italic text-ink-faint">
+                        {event.caption}
+                      </span>
                     </span>
                   </button>
 
@@ -92,9 +97,6 @@ export function Timeline() {
                             imgClassName={event.photoPosition ?? "object-top"}
                             sizes="256px"
                           />
-                          <p className="mt-4 font-serif text-sm leading-relaxed text-ink-soft">
-                            {event.description}
-                          </p>
                         </div>
                       </motion.div>
                     )}

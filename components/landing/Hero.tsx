@@ -4,13 +4,10 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Frame } from "@/components/ui/Frame";
 import { family } from "@/data/content";
-import { useIsCoarsePointer } from "@/lib/useIsCoarsePointer";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function Hero() {
-  const isCoarsePointer = useIsCoarsePointer();
-
   const scrollToIntro = () => {
     document.getElementById("intro")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -21,14 +18,8 @@ export function Hero() {
       className="relative flex h-[100svh] w-full items-center justify-center overflow-hidden bg-ink"
     >
       <motion.div
-        initial={
-          isCoarsePointer
-            ? { opacity: 0, scale: 1.09 }
-            : { opacity: 0, scale: 1.09, filter: "blur(26px)" }
-        }
-        animate={
-          isCoarsePointer ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1, filter: "blur(4px)" }
-        }
+        initial={{ opacity: 0, scale: 1.09 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 3.4, ease: EASE }}
         className="absolute inset-0"
       >
@@ -56,8 +47,8 @@ export function Hero() {
         </motion.span>
 
         <motion.h1
-          initial={isCoarsePointer ? { opacity: 0, y: 22 } : { opacity: 0, y: 22, filter: "blur(10px)" }}
-          animate={isCoarsePointer ? { opacity: 1, y: 0 } : { opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.7, delay: 1.5, ease: EASE }}
           className="text-balance font-display text-5xl italic leading-tight sm:text-6xl md:text-7xl"
         >

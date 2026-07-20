@@ -2,11 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { family } from "@/data/content";
-import { useIsCoarsePointer } from "@/lib/useIsCoarsePointer";
 
 export function LoadingScreen({ visible }: { visible: boolean }) {
-  const isCoarsePointer = useIsCoarsePointer();
-
   return (
     <AnimatePresence>
       {visible && (
@@ -14,7 +11,7 @@ export function LoadingScreen({ visible }: { visible: boolean }) {
           key="loading-screen"
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-cream"
           initial={{ opacity: 1 }}
-          exit={isCoarsePointer ? { opacity: 0 } : { opacity: 0, filter: "blur(6px)" }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           aria-hidden={!visible}
         >

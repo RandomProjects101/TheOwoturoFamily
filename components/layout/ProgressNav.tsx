@@ -7,7 +7,7 @@ export const JOURNEY_SECTIONS = [
   { id: "hero", label: "Welcome" },
   { id: "intro", label: "Introduction" },
   { id: "gallery", label: "Family Gallery" },
-  { id: "voices", label: "The Family Speaks" },
+  // { id: "voices", label: "The Family Speaks" }, — re-add alongside FamilySpeaks in app/page.tsx
   { id: "memories", label: "Favourite Memories" },
   { id: "timeline", label: "Her Timeline" },
   { id: "wall", label: "Photo Wall" },

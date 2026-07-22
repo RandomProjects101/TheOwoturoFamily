@@ -9,7 +9,8 @@ import { ProgressNav } from "@/components/layout/ProgressNav";
 import { Hero } from "@/components/landing/Hero";
 import { IntroSection } from "@/components/sections/IntroSection";
 import { FamilyGallery } from "@/components/sections/FamilyGallery";
-import { FamilySpeaks } from "@/components/sections/FamilySpeaks";
+// FamilySpeaks temporarily disabled — re-add the import and <FamilySpeaks />
+// below (and its ProgressNav entry) when it's ready to go back in.
 import { FavouriteMemories } from "@/components/sections/FavouriteMemories";
 import { Timeline } from "@/components/sections/Timeline";
 import { PhotoWall } from "@/components/sections/PhotoWall";
@@ -41,7 +42,6 @@ export default function Home() {
           <Hero />
           <IntroSection />
           <FamilyGallery />
-          <FamilySpeaks />
           <FavouriteMemories />
           <Timeline />
           <PhotoWall />

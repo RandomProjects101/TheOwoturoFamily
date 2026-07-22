@@ -92,7 +92,7 @@ export const introSection = {
 
 export const familyPortrait: GalleryImage = {
   id: "family-portrait",
-  src: "/images/gallery/family-portrait.jpg",
+  src: "/images/gallery/family-portrait.png",
   alt: "The Owoturo family",
 };
 

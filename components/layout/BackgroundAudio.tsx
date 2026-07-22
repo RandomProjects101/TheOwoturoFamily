@@ -34,6 +34,27 @@ export function BackgroundAudio() {
     };
   }, []);
 
+  // Stop when they switch away (tab, app-switch, minimize) instead of
+  // playing on unattended in the background, and pick back up if it was
+  // playing when they return.
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    let wasPlaying = false;
+
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        wasPlaying = !audio.paused;
+        audio.pause();
+      } else if (wasPlaying) {
+        audio.play().catch(() => {});
+      }
+    };
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", onVisibilityChange);
+  }, []);
+
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio || unavailable) return;
